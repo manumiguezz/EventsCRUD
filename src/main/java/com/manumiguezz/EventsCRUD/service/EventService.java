@@ -1,6 +1,6 @@
-package service;
+package com.manumiguezz.EventsCRUD.service;
 
-import entity.Event;
+import com.manumiguezz.EventsCRUD.entity.Event;
 
 import java.util.List;
 
