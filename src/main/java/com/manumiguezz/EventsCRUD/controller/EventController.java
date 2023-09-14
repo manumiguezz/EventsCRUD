@@ -20,15 +20,15 @@ public class EventController {
     @PostConstruct
     private void loadData(){
 
-        Event evt1 = new Event("starshooting", "DMstudio", 100 );
-        Event evt2 = new Event("chatter", "Dancerella", 240 );
-        Event evt3 = new Event("watering", "DanceBirds", 190 );
-
-        theEvents = new ArrayList<>();
-
-        theEvents.add(evt1);
-        theEvents.add(evt2);
-        theEvents.add(evt3);
+//        Event evt1 = new Event("starshooting", "DMstudio", 100 );
+//        Event evt2 = new Event("chatter", "Dancerella", 240 );
+//        Event evt3 = new Event("watering", "DanceBirds", 190 );
+//
+//        theEvents = new ArrayList<>();
+//
+//        theEvents.add(evt1);
+//        theEvents.add(evt2);
+//        theEvents.add(evt3);
     }
 
     @GetMapping("/list")
