@@ -1,7 +1,7 @@
 package com.manumiguezz.springboot.EventsCRUD.controller;
 
 
-import com.manumiguezz.EventsCRUD.entity.Event;
+import com.manumiguezz.springboot.EventsCRUD.entity.Event;
 import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

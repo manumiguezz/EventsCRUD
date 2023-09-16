@@ -1,6 +1,7 @@
 package com.manumiguezz.springboot.EventsCRUD.service;
 
-import com.manumiguezz.EventsCRUD.entity.Event;
+
+import com.manumiguezz.springboot.EventsCRUD.entity.Event;
 
 import java.util.List;
 
