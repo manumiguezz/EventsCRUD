@@ -8,31 +8,31 @@
 
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
-	<title>Employee Directory</title>
+	<title>Event Directory</title>
 </head>
 
 <body>
 
 <div class="container">
 
-	<h3>Employee Directory</h3>
+	<h3>Event Directory</h3>
 	<hr>
 
 	<table class="table table-bordered table-striped">
 		<thead class="table-dark">
 			<tr>
-				<th>First Name</th>
-				<th>Last Name</th>
-				<th>Email</th>
+				<th>Event Name</th>
+				<th>Company Name</th>
+				<th>Tickets Sold</th>
 			</tr>
 		</thead>
 		
 		<tbody>
 			<tr th:each="tempEmployee : ${employees}">
 			
-				<td th:text="${tempEmployee.firstName}" />	
-				<td th:text="${tempEmployee.lastName}" />	
-				<td th:text="${tempEmployee.email}" />	
+				<td th:text="${tempEmployee.EventName}" />
+				<td th:text="${tempEmployee.CompanyName}" />
+				<td th:text="${tempEmployee.TicketSold}" />
 				
 			</tr>
 		</tbody>		
