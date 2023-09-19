@@ -2,6 +2,7 @@ package com.manumiguezz.springboot.EventsCRUD.service;
 
 
 import com.manumiguezz.springboot.EventsCRUD.entity.Event;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
