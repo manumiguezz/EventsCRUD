@@ -4,12 +4,10 @@ package com.manumiguezz.springboot.EventsCRUD.controller;
 import com.manumiguezz.springboot.EventsCRUD.entity.Event;
 import com.manumiguezz.springboot.EventsCRUD.service.EventService;
 import jakarta.annotation.PostConstruct;
+import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -42,10 +40,20 @@ public class EventController {
         return "events/event-form";
     }
 
+    @GetMapping("showFormForUpdate")
+    public String showFormForUpdate(@RequestParam("eventId") int theId, Model theModel) {
+        Event theEvent = eventService.findById(theId);
+
+        theModel.addAttribute("event", theEvent);
+
+        return "events/event-form";
+    }
+
     @PostMapping("/save")
     public String saveEvent(@ModelAttribute("event") Event theEvent){
         eventService.save(theEvent);
 
         return "redirect:/events/list";
     }
+
 }
