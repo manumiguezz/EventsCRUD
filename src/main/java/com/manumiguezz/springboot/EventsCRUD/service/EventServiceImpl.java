@@ -11,13 +11,12 @@ import java.util.Optional;
 @Service
 public class EventServiceImpl implements EventService{
 
-
     private EventsRepository eventsRepository;
 
     @Transactional
     @Override
     public List<Event> findAll() {
-        return eventsRepository.findAll();
+        return eventsRepository.findAllByOrderByEventNameAsc();
     }
 
     @Transactional
