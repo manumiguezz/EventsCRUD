@@ -12,20 +12,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping("/event")
+@RequestMapping("/events")
 public class EventController {
-
-    private List<Event> theEvents;
 
     private EventService eventService;
 
     public EventController(EventService theEventService) {
         eventService = theEventService;
-    }
-
-    @PostConstruct
-    private void loadData(){
-
     }
 
     @GetMapping("/list")
@@ -34,6 +27,16 @@ public class EventController {
         List<Event> theEvents = eventService.findAll();
 
         theModel.addAttribute("events", theEvents);
-        return "events list";
+        return "events/list-events";
+    }
+
+    @GetMapping("showFormForAdd")
+    public String showFormForAdd(Model theModel){
+
+        Event theEvent = new Event();
+
+        theModel.addAttribute("event", theEvent);
+
+        return "events/event-form";
     }
 }

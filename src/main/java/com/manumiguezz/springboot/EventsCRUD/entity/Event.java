@@ -20,7 +20,7 @@ public class Event {
     @Column(name = "tickets_sold")
     private int ticketSold;
 
-    public Event(int id, String eventName, String eventCompany, int ticketSold) {
+    public Event() {
         this.id = id;
         this.eventName = eventName;
         this.eventCompany = eventCompany;
