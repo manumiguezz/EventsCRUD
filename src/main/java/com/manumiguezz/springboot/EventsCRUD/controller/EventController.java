@@ -7,6 +7,8 @@ import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -38,5 +40,12 @@ public class EventController {
         theModel.addAttribute("event", theEvent);
 
         return "events/event-form";
+    }
+
+    @PostMapping("/save")
+    public String saveEvent(@ModelAttribute("event") Event theEvent){
+        eventService.save(theEvent);
+
+        return "redirect:/events/list";
     }
 }
