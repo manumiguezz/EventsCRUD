@@ -2,6 +2,7 @@ package com.manumiguezz.springboot.EventsCRUD.controller;
 
 
 import com.manumiguezz.springboot.EventsCRUD.entity.Event;
+import com.manumiguezz.springboot.EventsCRUD.service.EventService;
 import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,22 +17,22 @@ public class EventController {
 
     private List<Event> theEvents;
 
+    private EventService eventService;
+
+    public EventController(EventService theEventService) {
+        eventService = theEventService;
+    }
+
     @PostConstruct
     private void loadData(){
 
-//        Event evt1 = new Event("starshooting", "DMstudio", 100 );
-//        Event evt2 = new Event("chatter", "Dancerella", 240 );
-//        Event evt3 = new Event("watering", "DanceBirds", 190 );
-//
-//        theEvents = new ArrayList<>();
-//
-//        theEvents.add(evt1);
-//        theEvents.add(evt2);
-//        theEvents.add(evt3);
     }
 
     @GetMapping("/list")
     public String listEvents (Model theModel) {
+
+        List<Event> theEvents = eventService.findAll();
+
         theModel.addAttribute("events", theEvents);
         return "events list";
     }
