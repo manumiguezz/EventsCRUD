@@ -49,6 +49,13 @@ public class EventController {
         return "events/event-form";
     }
 
+    @GetMapping("/delete")
+    public String delete(@RequestParam("eventId") int theId, Model theModel) {
+        eventService.deleteById(theId);
+
+        return "redirect:/events/list";
+    }
+
     @PostMapping("/save")
     public String saveEvent(@ModelAttribute("event") Event theEvent){
         eventService.save(theEvent);
