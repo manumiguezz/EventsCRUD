@@ -3,7 +3,7 @@ package com.manumiguezz.springboot.EventsCRUD.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "event_name")
+@Table(name = "events_table")
 public class Event {
 
     @Id
@@ -21,13 +21,6 @@ public class Event {
     private int ticketSold;
 
     public Event() {
-        this.id = id;
-        this.eventName = eventName;
-        this.eventCompany = eventCompany;
-        this.ticketSold = ticketSold;
-    }
-
-    public Event(String eventName, String eventCompany, int ticketSold) {
         this.eventName = eventName;
         this.eventCompany = eventCompany;
         this.ticketSold = ticketSold;

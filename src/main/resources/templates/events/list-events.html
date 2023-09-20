@@ -31,17 +31,16 @@
 		<tbody>
 			<tr th:each="tempEvent : ${events}">
 			
-				<td th:text="${tempEvent.EventName}" />
-				<td th:text="${tempEvent.CompanyName}" />
-				<td th:text="${tempEvent.TicketSold}" />
+				<td th:text="${tempEvent.eventName}" />
+				<td th:text="${tempEvent.eventCompany}" />
+				<td th:text="${tempEvent.ticketSold}" />
 				<td>
-					<a th:href="@{/events/showFormForUpdate(eventId=${tempEvent.id}"
+					<a th:href="@{/events/showFormForUpdate(eventId=${tempEvent.id})}"
 						class="btn btn-info btn-sm">
 						Update
 					</a>
-				</td>
-				<td>
-					<a th:href="@{/events/delete(eventId=${tempEvent.id}"
+
+					<a th:href="@{/events/delete(eventId=${tempEvent.id})}"
 					   class="btn btn-danger btn-sm"
 					   onclick="if (!(confirm('Are you sure you want to delete this event?'))) return false">
 						Delete
@@ -52,8 +51,8 @@
 		</tbody>		
 	</table>
 
-	<a th:href="@{/events/showFormForAdd"
-		class="btn btn-primary btn-sm mb-4">
+	<a th:href="@{/events/showFormForAdd}"
+	   class="btn btn-primary btn-sm mb-4">
 		Add Event
 	</a>
 	
