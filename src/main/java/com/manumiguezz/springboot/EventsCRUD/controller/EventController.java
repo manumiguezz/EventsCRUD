@@ -3,8 +3,6 @@ package com.manumiguezz.springboot.EventsCRUD.controller;
 
 import com.manumiguezz.springboot.EventsCRUD.entity.Event;
 import com.manumiguezz.springboot.EventsCRUD.service.EventService;
-import jakarta.annotation.PostConstruct;
-import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
