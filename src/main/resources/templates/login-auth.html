@@ -3,11 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Login Page</title>
+
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
 </head>
 <body>
 
 <h3>Login Page</h3>
 <form action="#" th:action="@{/authenticateTheUser}" method="POST">
+
+    <div th:if="${param.error}">
+        <i class="error">You entered the wrong credentials.</i>
+    </div>
 
     <p>
         User name: <input type="text" name="username"/>
