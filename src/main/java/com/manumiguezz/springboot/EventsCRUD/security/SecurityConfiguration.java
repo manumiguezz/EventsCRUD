@@ -17,7 +17,8 @@ public class SecurityConfiguration {
         httpSecurity.authorizeHttpRequests(configurer ->
                 configurer
                         .requestMatchers("/").hasRole("PUBLIC")
-                        .requestMatchers("/public-events").hasRole("WORKER")
+                        .requestMatchers("events/list").hasRole("WORKER")
+                        .requestMatchers("dev/user-roles").hasRole("DEV")
                         .anyRequest().authenticated())
                 .formLogin(form ->
                         form

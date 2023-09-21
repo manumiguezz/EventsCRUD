@@ -22,6 +22,18 @@
             (public)
         </p>
 
+        <hr>
+        <p>
+            <a th:href="@{/events/list-events}"> Events List</a>
+            (manager)
+        </p>
+
+        <hr>
+        <p>
+            <a th:href="@{user-roles}"> User Roles</a>
+            (Dev)
+        </p>
+
         <form action="#" th:action="@{/logout}" method="POST">
             <input type="submit" value="Logout"/>
         </form>

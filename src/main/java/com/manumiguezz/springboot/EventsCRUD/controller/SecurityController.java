@@ -13,6 +13,6 @@ public class SecurityController {
 
     @GetMapping("/public-events")
     public String showPublicEvents(){
-        return "events/list-events-public";
+        return "public/list-events-public";
     }
 }
