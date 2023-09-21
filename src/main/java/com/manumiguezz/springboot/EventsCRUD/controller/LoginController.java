@@ -8,6 +8,7 @@ public class LoginController {
 
     @GetMapping("/LoginPage")
     public String loginPage() {
-        return "login-auth";
+//        return "login-auth";
+        return "design-login";
     }
 }
