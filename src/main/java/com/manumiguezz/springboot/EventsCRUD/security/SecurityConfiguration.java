@@ -17,8 +17,15 @@ public class SecurityConfiguration {
         httpSecurity.authorizeHttpRequests(configurer ->
                 configurer
                         .requestMatchers("/").hasRole("PUBLIC")
-                        .requestMatchers("events/list").hasRole("WORKER")
-                        .requestMatchers("dev/user-roles").hasRole("DEV")
+
+                        .requestMatchers("/worker-events").hasRole("WORKER")
+                        .requestMatchers("/events/list-events").hasRole("WORKER")
+                        .requestMatchers("/events/event-form").hasRole("WORKER")
+                        .requestMatchers("events/**").hasRole("WORKER")
+
+                        .requestMatchers("/user-roles").hasRole("DEV")
+                        .requestMatchers("dev/**").hasRole("DEV")
+
                         .anyRequest().authenticated())
                 .formLogin(form ->
                         form
@@ -35,19 +42,19 @@ public class SecurityConfiguration {
     public InMemoryUserDetailsManager userDetailsManager() {
 
         UserDetails manuel = User.builder()
-                .username("manuel miguez")
+                .username("Manuel Miguez")
                 .password("{noop}testing")
                 .roles("DEV", "WORKER", "PUBLIC")
                 .build();
 
         UserDetails bianca = User.builder()
-                .username("bianca lauria")
+                .username("Bianca Lauria")
                 .password("{noop}testing")
                 .roles("WORKER", "PUBLIC")
                 .build();
 
         UserDetails javier = User.builder()
-                .username("javi pucheta")
+                .username("Javi Pucheta")
                 .password("{noop}testing")
                 .roles("PUBLIC")
                 .build();
