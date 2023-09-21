@@ -10,4 +10,9 @@ public class SecurityController {
     public String showHome(){
         return "home";
     }
+
+    @GetMapping("/public-events")
+    public String showPublicEvents(){
+        return "events/list-events-public";
+    }
 }

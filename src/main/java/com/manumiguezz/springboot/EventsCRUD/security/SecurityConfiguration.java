@@ -15,7 +15,10 @@ public class SecurityConfiguration {
     public SecurityFilterChain filterChain (HttpSecurity httpSecurity) throws Exception {
 
         httpSecurity.authorizeHttpRequests(configurer ->
-                configurer .anyRequest().authenticated())
+                configurer
+                        .requestMatchers("/").hasRole("PUBLIC")
+                        .requestMatchers("/public-events").hasRole("WORKER")
+                        .anyRequest().authenticated())
                 .formLogin(form ->
                         form
                                 .loginPage("/LoginPage")

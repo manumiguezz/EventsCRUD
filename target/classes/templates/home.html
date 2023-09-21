@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org">
+<html lang="en" xmlns:th="http://thymeleaf.org" xmlns:sec="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Event Home Page</title>
@@ -10,6 +10,16 @@
         <hr>
         <p>
             Welcome to the Event Home Page :)
+        </p>
+
+        User: <span sec:authentication="principal.username"></span>
+        <br><br>
+        Roles: <span sec:authentication="principal.authorities"></span>
+
+        <hr>
+        <p>
+            <a th:href="@{/public-events}"> Events List</a>
+            (public)
         </p>
 
         <form action="#" th:action="@{/logout}" method="POST">
