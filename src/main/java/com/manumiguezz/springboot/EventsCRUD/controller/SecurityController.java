@@ -43,4 +43,9 @@ public class SecurityController {
         return "dev/user-roles";
     }
 
+    @GetMapping("/access-denied")
+    public String showAccessDenied(){
+        return "access-denied";
+    }
+
 }

@@ -19,15 +19,6 @@ public class EventController {
         eventService = theEventService;
     }
 
-    @GetMapping("/list")
-    public String listEvents (Model theModel) {
-
-        List<Event> theEvents = eventService.findAll();
-
-        theModel.addAttribute("events", theEvents);
-        return "events/list-events";
-    }
-
     @GetMapping("showFormForAdd")
     public String showFormForAdd(Model theModel){
 
