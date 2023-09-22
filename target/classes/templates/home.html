@@ -23,16 +23,21 @@
         </p>
 
         <br>
-        <p>
-            <a th:href="@{/worker-events}"> Events List</a>
-            (manager)
-        </p>
+
+        <div sec:authorize="hasRole('WORKER')">
+            <p>
+                <a th:href="@{/worker-events}"> Events List</a>
+                (manager)
+            </p>
+        </div>
 
         <br>
-        <p>
-            <a th:href="@{/user-roles}"> User Roles</a>
-            (Dev)
-        </p>
+        <div sec:authorize="hasRole('DEV')">
+            <p>
+                <a th:href="@{/user-roles}"> User Roles</a>
+                (Dev)
+            </p>
+        </div>
         <hr>
 
         <form action="#" th:action="@{/logout}" method="POST">

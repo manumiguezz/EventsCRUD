@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Access Denied</title>
+  <style>
+    .error{
+      color:red;
+    }
+  </style>
 </head>
 <body>
 
-<h2>Access Denied - You do not have authorization to visit this page</h2>
+<h2 class="error">Access Denied - You do not have authorization to visit this page</h2>
 
-<hr>
+<hr class="error">
 
-<a th:href="@{/}">Back to Home</a>
+<a class="error" th:href="@{/}">Back to Home</a>
+
 </body>
 </html>
