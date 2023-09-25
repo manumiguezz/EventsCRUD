@@ -20,9 +20,8 @@
     <tbody>
     <tr th:each="tempEvent : ${events}">
 
-        <td th:text="${tempEvent.eventName}" />
-        <td th:text="${tempEvent.eventCompany}" />
-        <td th:text="${tempEvent.ticketSold}" />
+        <td th:text="${tempEvent.username}" />
+        <td th:text="${tempEvent.authority}" />
         <td>
             <a th:href="@{/events/showFormForUpdate(eventId=${tempEvent.id})}"
                class="btn btn-info btn-sm">
