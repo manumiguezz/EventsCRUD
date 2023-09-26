@@ -1,5 +1,6 @@
 package com.manumiguezz.springboot.EventsCRUD.service;
 
+import com.manumiguezz.springboot.EventsCRUD.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -20,7 +21,7 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public User findByUserName(String userName) {
-        return ;
+        return userDao.findByUserName(userName);
     }
 
     @Override
