@@ -1,23 +1,26 @@
 package com.manumiguezz.springboot.EventsCRUD.dao;
 
-
+import com.manumiguezz.springboot.EventsCRUD.dao.RoleDao;
 import com.manumiguezz.springboot.EventsCRUD.entity.Role;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class RoleDaoImpl implements RoleDao {
 
     private EntityManager entityManager;
 
-    public RoleDaoImpl(EntityManager entityManager) {
-        this.entityManager = entityManager;
+    public RoleDaoImpl(EntityManager theEntityManager) {
+        entityManager = theEntityManager;
     }
 
     @Override
-    public Role findByRoleName(String theRoleName) {
+    public Role findRoleByName(String theRoleName) {
 
-        TypedQuery<Role> theQuery = entityManager.createQuery("from Role where roleName=:uRole", Role.class);
-        theQuery.setParameter("uRole", theRoleName);
+        // retrieve/read from database using name
+        TypedQuery<Role> theQuery = entityManager.createQuery("from Role where name=:roleName", Role.class);
+        theQuery.setParameter("roleName", theRoleName);
 
         Role theRole = null;
 

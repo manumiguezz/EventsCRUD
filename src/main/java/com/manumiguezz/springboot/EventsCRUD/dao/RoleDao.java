@@ -4,5 +4,6 @@ import com.manumiguezz.springboot.EventsCRUD.entity.Role;
 
 public interface RoleDao {
 
-    Role findByRoleName (String roleName);
+    public Role findRoleByName(String theRoleName);
+
 }
