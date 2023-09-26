@@ -1,16 +1,18 @@
 package com.manumiguezz.springboot.EventsCRUD.dao;
 
-
+import com.manumiguezz.springboot.EventsCRUD.dao.UserDao;
 import com.manumiguezz.springboot.EventsCRUD.entity.User;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class UserDaoImpl implements UserDao {
 
     private EntityManager entityManager;
 
-    public UserDaoImpl(EntityManager entityManager) {
-        this.entityManager = entityManager;
+    public UserDaoImpl(EntityManager theEntityManager) {
+        this.entityManager = theEntityManager;
     }
 
     @Override
@@ -20,7 +22,6 @@ public class UserDaoImpl implements UserDao {
         theQuery.setParameter("uName", theUserName);
 
         User theUser = null;
-
         try {
             theUser = theQuery.getSingleResult();
         } catch (Exception e) {
@@ -29,4 +30,5 @@ public class UserDaoImpl implements UserDao {
 
         return theUser;
     }
+
 }
